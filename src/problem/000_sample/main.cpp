@@ -4,7 +4,6 @@
 
 #include <bits/stdc++.h>
 
-#define int long long int
 #define F first
 #define S second
 #define ll long long int
