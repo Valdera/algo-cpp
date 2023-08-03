@@ -40,6 +40,7 @@ include(Warnings)
 include(Tools)
 include(LTO)
 include(ConfigSafeGuards)
+include(SubDirList)
 
 add_cmake_format_target()
 add_clang_format_target()

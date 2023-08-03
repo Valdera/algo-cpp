@@ -142,3 +142,6 @@ ipch/
 
 # Visual Studio Trace Files
 *.e2e
+
+# C Lion
+cmake-build-debug
