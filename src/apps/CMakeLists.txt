@@ -1,0 +1,1 @@
+add_subdirectory(calc_console)
