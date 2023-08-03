@@ -1,10 +1,10 @@
 /**
- * I can do all things
+ * Problem:
+ * https://leetcode.com/problems/first-unique-character-in-a-string/
  */
 
 #include <bits/stdc++.h>
 
-#define int long long int
 #define F first
 #define S second
 #define ll long long int
@@ -15,6 +15,7 @@
 #define vpi vector<pii>
 #define vpp vector<pair<int, pii>>
 #define mii map<int, int>
+#define mci map<char, int>
 #define mpi map<pii, int>
 #define spi set<pii>
 #define endl "\n"
@@ -64,7 +65,30 @@ void __f(const char* names, Arg1&& arg1,
 
 const int N = 200005;
 
-void solve() {}
+int findKthLargest(vector<int>& nums, int k) {
+  que_min pq;
+
+  for (int num : nums) {
+    pq.push(num);
+    if (pq.size() > k) {
+      pq.pop();
+    }
+  }
+
+  return pq.top();
+}
+
+void solve() {
+  int n, k;
+  cin >> n >> k;
+
+  vector<int> v(n);
+  for (int i = 0; i < n; i++) {
+    cin >> v[i];
+  }
+
+  cout << findKthLargest(v, k) << endl;
+}
 
 int32_t main() {
   ios_base::sync_with_stdio(0);
@@ -79,7 +103,7 @@ int32_t main() {
   clock_t z = clock();
 
   int t = 1;
-  // cin >> t;
+  cin >> t;
   while (t--)
     solve();
 

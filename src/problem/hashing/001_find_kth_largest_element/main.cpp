@@ -1,10 +1,10 @@
 /**
- * I can do all things
+ * Problem:
+ * https://leetcode.com/problems/kth-largest-element-in-an-array/
  */
 
 #include <bits/stdc++.h>
 
-#define int long long int
 #define F first
 #define S second
 #define ll long long int
@@ -15,6 +15,7 @@
 #define vpi vector<pii>
 #define vpp vector<pair<int, pii>>
 #define mii map<int, int>
+#define mci map<char, int>
 #define mpi map<pii, int>
 #define spi set<pii>
 #define endl "\n"
@@ -64,7 +65,27 @@ void __f(const char* names, Arg1&& arg1,
 
 const int N = 200005;
 
-void solve() {}
+int firstUniqueChar(string s) {
+  array<int, 26> m{};
+
+  for (int c : s) {
+    m.at(c - 'a') += 1;
+  }
+
+  for (int i = 0; i < s.size(); i++) {
+    if (m.at(s[i] - 'a') == 1)
+      return i;
+  }
+
+  return -1;
+}
+
+void solve() {
+  string s;
+  cin >> s;
+
+  cout << firstUniqueChar(s) << endl;
+}
 
 int32_t main() {
   ios_base::sync_with_stdio(0);
@@ -79,7 +100,7 @@ int32_t main() {
   clock_t z = clock();
 
   int t = 1;
-  // cin >> t;
+  cin >> t;
   while (t--)
     solve();
 

@@ -1,37 +1,52 @@
 #include <algorithm>
-#include <array>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-void updateArray(array<int, 6>& arr, int i, int val) {
-  arr[i] = val;
-}
-
-void print(const array<int, 6>& arr) {
-  int n = arr.size();
-  for (int i = 0; i < n; i++) {
-    cout << arr[i] << " ";
-  }
-  cout << endl;
-}
-
 int main() {
 
-  array<int, 6> arr = {1, 2, 33, 14, 5, 6};
+  // Empty Container Constructor
+  vector<int> first{};
 
-  updateArray(arr, 0, 1);
+  // Fill Constructor (4 integers with value 20)
+  vector<int> second(4, 20);
 
-  sort(arr.begin(), arr.end());
+  // Range Constructor
+  int numbers[] = {10, 20, 30, 40};
+  vector<int> third{numbers, numbers + 4};
 
-  print(arr);
+  // Copy Constructor
+  vector<int> fourth(third);
 
-  array<int, 10> fives{};
-  fives.fill(5);
+  /********************************************/
 
-  for (int five : fives) {
-    cout << five << " ";
-  }
+  vector<int> arr = {1, 2, 3, 4, 5};
+
+  // Get element at index i
+  cout << arr[1] << endl;
+  cout << arr.at(1) << endl;
+
+  // Get the current size
+  cout << arr.size() << endl;
+
+  // Get the underlying capacity;
+  cout << arr.capacity() << endl;
+
+  // push_back method O(1)
+  arr.push_back(4);
+
+  // pop_back method O(1)
+  arr.pop_back();
+
+  // clear all elements, reduce the size to 0
+  arr.clear();
+
+  // erase the 4th element
+  arr.erase(arr.begin() + 4);
+
+  // erase the range - first 3 elements
+  arr.erase(arr.begin(), arr.begin() + 3);
 
   return 0;
 }
