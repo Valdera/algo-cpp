@@ -15,9 +15,6 @@ option(USE_VCPKG "Whether to use vcpkg" OFF)
 option(ENABLE_WARNINGS "Enable to add warnings to a target." ON)
 option(ENABLE_WARNINGS_AS_ERRORS "Enable to treat warnings as errors." OFF)
 
-option(ENABLE_TESTING "Enable a Unit Testing build." ON)
-option(ENABLE_COVERAGE "Enable a Code Coverage build." OFF)
-
 option(ENABLE_INCLUDE_WHAT_YOU_USE "Enable to add iwyu." ON)
 option(ENABLE_CLANG_TIDY "Enable to add clang tidy." ON)
 option(ENABLE_CPPCHECK "Enable to add cppcheck." ON)
@@ -114,17 +111,3 @@ FetchContent_MakeAvailable(FTXTUI)
 # Subdirectory
 add_subdirectory(external)
 add_subdirectory(src)
-
-if(ENABLE_TESTING)
-  message(STATUS "Build unit tests for the project. Tests should always be found in the test folder\n")
-
-  FetchContent_Declare(
-    googletest
-    GIT_REPOSITORY https://github.com/google/googletest.git
-    GIT_TAG release-1.11.0
-    GIT_SHALLOW TRUE)
-  set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-  FetchContent_MakeAvailable(googletest)
-
-  add_subdirectory(tests)
-endif()
