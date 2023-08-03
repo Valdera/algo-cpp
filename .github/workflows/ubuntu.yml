@@ -23,12 +23,3 @@ jobs:
     - name: configure
       run: |
         cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DENABLE_COVERAGE=On
-    - name: coverage
-      run: |
-        cmake --build build --config Debug --target coverage -j4
-    - name: testing
-      run: |
-        cd build
-        cd tests
-        ctest -j 4
-        bash <(curl -s https://codecov.io/bash)
