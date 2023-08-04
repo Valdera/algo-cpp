@@ -145,7 +145,7 @@ def is_msvc_driver(compile_command):
 
 
 def win_split(cmdline):
-    """ Minimal implementation of shlex.split for Windows following
+    """ Minimal basic of shlex.split for Windows following
     https://msdn.microsoft.com/en-us/library/windows/desktop/17w5ykft.aspx.
     """
     def split_iter(cmdline):
@@ -197,7 +197,7 @@ def split_command(cmdstr):
     """ Split a command string into a list, respecting shell quoting. """
     if sys.platform.startswith('win'):
         # shlex.split does not work for Windows command-lines, so special-case
-        # to our own implementation.
+        # to our own basic.
         cmd = win_split(cmdstr)
     else:
         cmd = shlex.split(cmdstr)

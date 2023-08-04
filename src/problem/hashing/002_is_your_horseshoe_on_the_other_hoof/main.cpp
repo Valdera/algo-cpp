@@ -1,6 +1,6 @@
 /**
  * Problem:
- * https://codeforces.com/problemset/problem/1335/A
+ * https://codeforces.com/problemset/problem/228/A
  */
 
 #include <bits/stdc++.h>
@@ -65,22 +65,15 @@ void __f(const char* names, Arg1&& arg1,
 
 const int N = 200005;
 
-ll candyAndTwoSisters(ll n) {
-  ll val{};
-  if (n % 2 == 0) {
-    val = n / 2 - 1;
-  } else {
-    val = n / 2;
+void solve() {
+  unordered_set<ll> s;
+  ll n{};
+  for (int i = 0; i < 4; i++) {
+    cin >> n;
+    s.insert(n);
   }
 
-  return max(0LL, val);
-}
-
-void solve() {
-  ll n;
-  cin >> n;
-
-  cout << candyAndTwoSisters(n) << endl;
+  cout << 4 - s.size() << endl;
 }
 
 int32_t main() {
@@ -96,7 +89,7 @@ int32_t main() {
   clock_t z = clock();
 
   int t = 1;
-  cin >> t;
+  //  cin >> t;
   while (t--)
     solve();
 
