@@ -1,7 +1,7 @@
 /**
-* Problem:
-* https://codeforces.com/problemset/problem/214/A
-*/
+ * Problem:
+ * https://codeforces.com/problemset/problem/181/A
+ */
 
 #include <bits/stdc++.h>
 
@@ -196,20 +196,47 @@ T mod_inverse(T a, T n = MOD) {
 
 // ----------------------</BITWISE END>--------------------------
 
-void solve() {
-  ll n, m;
-  cin >> n >> m;
+pii series_of_crimes(vector<string> vs) {
 
-  ll res{0};
-  ll a, b;
-  REPT(a, 0, sqrt(n)) {
-    b = n - (a * a);
-    if (a + (b * b) == m) {
-      res++;
+  set<int> set_i;
+  set<int> set_j;
+  set<pair<int, int>> points;
+
+  int i, j;
+  REP(i, 0, vs.size()) {
+    string s = vs[i];
+    REP(j, 0, s.length()) {
+      if (s[j] == '*') {
+        set_i.insert(i);
+        set_j.insert(j);
+        points.insert({i, j});
+      }
     }
   }
 
-  cout << res << endl;
+  for (int i : set_i) {
+    for (int j : set_j) {
+      if (!points.count(pii(i, j))) {
+        return pii(i + 1, j + 1);
+      }
+    }
+  }
+}
+
+void solve() {
+  int n, m;
+  cin >> n >> m;
+
+  vector<string> vs(n);
+
+  int i;
+  REP(i, 0, n) {
+    cin >> vs[i];
+  }
+
+  pii res = series_of_crimes(vs);
+
+  cout << res.first << " " << res.second << endl;
 }
 
 int32_t main() {
@@ -224,7 +251,10 @@ int32_t main() {
 
   clock_t z = clock();
   int t = 1;
-  //  cin >> t;
+#ifndef ONLINE_JUDGE
+  cin >> t;
+#endif
+
   while (t--)
     solve();
 

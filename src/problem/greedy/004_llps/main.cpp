@@ -1,7 +1,7 @@
 /**
-* Problem:
-* https://codeforces.com/problemset/problem/214/A
-*/
+ * Problem:
+ * https://codeforces.com/problemset/problem/202/A
+ */
 
 #include <bits/stdc++.h>
 
@@ -30,9 +30,7 @@ using namespace std;
 #define que_min priority_queue<long long int, vi, greater<long long int>>
 
 #define REP(i, k, n) for (i = k; i < n; i++)
-#define REPT(i, k, n) for (i = k; i <= n; i++)
 #define REPR(i, k, n) for (i = k; i > n; i--)
-#define REPRT(i, k, n) for (i = k; i >= n; i--)
 // ----------------------</SHORT>--------------------------
 
 // ----------------------<DEBUG>--------------------------
@@ -196,20 +194,27 @@ T mod_inverse(T a, T n = MOD) {
 
 // ----------------------</BITWISE END>--------------------------
 
-void solve() {
-  ll n, m;
-  cin >> n >> m;
+string llps(string s) {
+  int curr_max = -1;
+  for (char c : s) {
+    curr_max = max(curr_max, (int)c);
+  }
 
-  ll res{0};
-  ll a, b;
-  REPT(a, 0, sqrt(n)) {
-    b = n - (a * a);
-    if (a + (b * b) == m) {
-      res++;
+  string res;
+  for (char c : s) {
+    if (c == curr_max) {
+      res.push_back(c);
     }
   }
 
-  cout << res << endl;
+  return res;
+}
+
+void solve() {
+  string s;
+  cin >> s;
+
+  cout << llps(s) << endl;
 }
 
 int32_t main() {

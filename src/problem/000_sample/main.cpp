@@ -29,7 +29,10 @@ using namespace std;
 #define que_min priority_queue<long long int, vi, greater<long long int>>
 
 #define REP(i, k, n) for (i = k; i < n; i++)
+#define REPT(i, k, n) for (i = k; i <= n; i++)
 #define REPR(i, k, n) for (i = k; i > n; i--)
+#define REPRT(i, k, n) for (i = k; i >= n; i--)
+
 // ----------------------</SHORT>--------------------------
 
 // ----------------------<DEBUG>--------------------------
