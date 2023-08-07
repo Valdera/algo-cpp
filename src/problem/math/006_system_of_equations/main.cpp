@@ -1,24 +1,6 @@
-# Data Structures, Algorithms, and Problem Solutions in C++
-
-![C++](https://img.shields.io/badge/C%2B%2B-11%2F14%2F17%2F20%2F23-blue)
-![License](https://camo.githubusercontent.com/890acbdcb87868b382af9a4b1fac507b9659d9bf/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667)
-![Linux Build](https://github.com/Valdera/algo-cpp/workflows/Ubuntu%20CI%20Test/badge.svg)
-
-## Software Requirements
-
-- CMake 3.16+
-- GNU Makefile
-- Doxygen
-- Conan (<= 2) or VCPKG
-- MSVC 2017 (or higher), G++9 (or higher), Clang++9 (or higher)
-- Code Coverage (only on GNU|Clang): lcov, gcovr
-
-## Default Solution Template
-
-```c++
 /**
- * αυτός που σκέφτεται αυτό που βλέπει
- */
+* I can do all things
+*/
 
 #include <bits/stdc++.h>
 
@@ -47,7 +29,9 @@ using namespace std;
 #define que_min priority_queue<long long int, vi, greater<long long int>>
 
 #define REP(i, k, n) for (i = k; i < n; i++)
+#define REPT(i, k, n) for (i = k; i <= n; i++)
 #define REPR(i, k, n) for (i = k; i > n; i--)
+#define REPRT(i, k, n) for (i = k; i >= n; i--)
 // ----------------------</SHORT>--------------------------
 
 // ----------------------<DEBUG>--------------------------
@@ -211,7 +195,21 @@ T mod_inverse(T a, T n = MOD) {
 
 // ----------------------</BITWISE END>--------------------------
 
-void solve() {}
+void solve() {
+  ll n, m;
+  cin >> n >> m;
+
+  ll res{0};
+  ll a, b;
+  REPT(a, 0, sqrt(n)) {
+    b = n - (a * a);
+    if (a + (b * b) == m) {
+      res++;
+    }
+  }
+
+  cout << res << endl;
+}
 
 int32_t main() {
   ios_base::sync_with_stdio(0);
@@ -225,7 +223,7 @@ int32_t main() {
 
   clock_t z = clock();
   int t = 1;
-  // cin >> t;
+  //  cin >> t;
   while (t--)
     solve();
 
@@ -233,8 +231,3 @@ int32_t main() {
 
   return 0;
 }
-```
-
-## Author
-
-- **Fauzan Valdera** - [Valdera](https://github.com/Valdera)
