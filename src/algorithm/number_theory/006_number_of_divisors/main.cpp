@@ -12,8 +12,8 @@ int numberOfDivisors(int n) {
         n /= p;
         ++power;
       }
+      divisors *= (power + 1);
     }
-    divisors *= (power + 1);
   }
   if (n > 1)
     divisors *= 2;  // n is a prime factor itself
