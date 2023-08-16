@@ -3,10 +3,12 @@ get_filename_component(TITLE ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 set(APP_NAME "${TYPE}-${TITLE}")
 set(APP_STATIC "${APP_NAME}_static")
 set(APP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp")
+set(APP_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/singly_linked_list.h")
 
 set(EXECUTABLE_OUTPUT_PATH "${PROJECT_SOURCE_DIR}/build")
 
-add_library(${APP_STATIC} STATIC ${APP_SOURCES})
+add_library(${APP_STATIC} STATIC ${APP_SOURCES} ${APP_HEADERS})
+
 target_include_directories(${APP_STATIC} PUBLIC include)
 target_precompile_headers(${APP_STATIC} PUBLIC <string>)
 
