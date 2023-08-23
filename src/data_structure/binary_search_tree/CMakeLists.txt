@@ -3,7 +3,7 @@ get_filename_component(TITLE ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 set(APP_NAME "${TYPE}-${TITLE}")
 set(APP_STATIC "${APP_NAME}_static")
 set(APP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp")
-set(APP_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/avl_tree.h")
+set(APP_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/binary_search_tree.h")
 
 set(EXECUTABLE_OUTPUT_PATH "${PROJECT_SOURCE_DIR}/build")
 
