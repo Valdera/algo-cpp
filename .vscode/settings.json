@@ -114,7 +114,6 @@
     "workbench.editorAssociations": {
         "*.svg": "svgPreviewer.customEditor"
     },
-    "workbench.editor.untitled.hint": "hidden",
     "git.enableSmartCommit": true,
     "git.autofetch": true,
     "git.confirmSync": false,
@@ -219,5 +218,6 @@
     "C_Cpp_Runner.includePaths": [],
     "C_Cpp_Runner.compilerArgs": [],
     "C_Cpp_Runner.linkerArgs": [],
-    "cmake.configureOnOpen": true
+    "cmake.configureOnOpen": true,
+    "workbench.editor.empty.hint": "hidden"
 }
